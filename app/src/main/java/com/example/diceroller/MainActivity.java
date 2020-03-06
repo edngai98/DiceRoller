@@ -27,13 +27,19 @@ public class MainActivity extends AppCompatActivity {
         imageViewDice2 = (ImageView) findViewById(R.id.image_view_dice2);
 
         final TextView sumDice = (TextView) findViewById(R.id.sumOfDice);
+        final TextView dice1Value = (TextView) findViewById(R.id.dice1Value);
+        final TextView dice2Value = (TextView) findViewById(R.id.dice2Value);
 
         button.setOnClickListener(new View.OnClickListener(){
            @Override
             public void onClick(View v) {
-               int sum = rollDice1() + rollDice2();
+               int dice1 = rollDice1();
+               int dice2 = rollDice2();
+               int sum = dice1 + dice2;
 
                sumDice.setText(String.valueOf(sum));
+               dice1Value.setText(String.valueOf(dice1));
+               dice2Value.setText(String.valueOf(dice2));
            }
 
         });
